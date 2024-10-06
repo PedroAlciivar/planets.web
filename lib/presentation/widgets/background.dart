@@ -19,7 +19,7 @@ class Background extends StatelessWidget {
         height: screenHeight,
         width: screenWidth,
         onTapAnimation: true,
-        awayAnimationDuration: const Duration(seconds: 10),
+        awayAnimationDuration: const Duration(seconds: 5),
         awayAnimationCurve: Curves.linear,
         enableHover: true,
         hoverRadius: 90,
@@ -35,8 +35,8 @@ class Background extends StatelessWidget {
       particles.add(Particle(
         color: Colors.white.withOpacity(0.6),
         size: rng.nextDouble() * 10,
-        velocity: Offset(rng.nextDouble() * 200 * randomSign(),
-            rng.nextDouble() * 200 * randomSign()),
+        velocity: Offset(rng.nextDouble() * 50 * randomSign(),
+            rng.nextDouble() * 50 * randomSign()),
       ));
     }
     return particles;
