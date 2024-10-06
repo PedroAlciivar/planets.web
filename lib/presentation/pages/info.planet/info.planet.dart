@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:planets/data/models/model.planet.dart';
 import 'package:planets/helpers/image.planet.dart';
@@ -79,7 +78,7 @@ class InfoPlanetPage extends ConsumerWidget {
                                       .addPlanet(planet.name ?? '');
                                 }
                               },
-                              icon: FaIcon(FontAwesomeIcons.star,
+                              icon: Icon(Icons.star,
                                   color: favoriteList.contains(planet.name)
                                       ? Colors.yellow
                                       : Colors.white)),
@@ -120,8 +119,7 @@ class InfoPlanetPage extends ConsumerWidget {
                                 clickMaskDismiss: false,
                                 builder: (context) => _showDescription(
                                     size, boxWidth, planet.description ?? '')),
-                            icon: const FaIcon(FontAwesomeIcons.info,
-                                color: Colors.white)),
+                            icon: const Icon(Icons.info, color: Colors.white)),
                         Text(
                           "Nombre: ${planet.name ?? ''}",
                           style: const TextStyle(color: Colors.white),
@@ -208,8 +206,8 @@ _showDescription(Size size, double boxWidth, String description) {
             alignment: Alignment.topRight,
             child: IconButton(
                 onPressed: () => SmartDialog.dismiss(),
-                icon: const FaIcon(
-                  FontAwesomeIcons.x,
+                icon: const Icon(
+                  Icons.close,
                   color: Colors.white,
                 ))),
         Container(
