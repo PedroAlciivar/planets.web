@@ -78,10 +78,14 @@ class InfoPlanetPage extends ConsumerWidget {
                                       .addPlanet(planet.name ?? '');
                                 }
                               },
-                              icon: Icon(Icons.star,
-                                  color: favoriteList.contains(planet.name)
-                                      ? Colors.yellow
-                                      : Colors.white)),
+                              icon: Text(
+                                '★',
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    color: favoriteList.contains(planet.name)
+                                        ? Colors.white
+                                        : Colors.yellow),
+                              )),
                           loading: () => const CircularProgressIndicator(),
                           error: (error, stack) => Text('Error: $error'),
                         ),
@@ -115,11 +119,15 @@ class InfoPlanetPage extends ConsumerWidget {
                           ),
                         ),
                         IconButton(
-                            onPressed: () => SmartDialog.show(
-                                clickMaskDismiss: false,
-                                builder: (context) => _showDescription(
-                                    size, boxWidth, planet.description ?? '')),
-                            icon: const Icon(Icons.info, color: Colors.white)),
+                          onPressed: () => SmartDialog.show(
+                              clickMaskDismiss: false,
+                              builder: (context) => _showDescription(
+                                  size, boxWidth, planet.description ?? '')),
+                          icon: const Text(
+                            'ℹ️',
+                            style: TextStyle(fontSize: 25, color: Colors.white),
+                          ),
+                        ),
                         Text(
                           "Nombre: ${planet.name ?? ''}",
                           style: const TextStyle(color: Colors.white),
@@ -206,9 +214,9 @@ _showDescription(Size size, double boxWidth, String description) {
             alignment: Alignment.topRight,
             child: IconButton(
                 onPressed: () => SmartDialog.dismiss(),
-                icon: const Icon(
-                  Icons.close,
-                  color: Colors.white,
+                icon: const Text(
+                  'X',
+                  style: TextStyle(fontSize: 25, color: Colors.white),
                 ))),
         Container(
           height: size.height * 0.5,
