@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hovering/hovering.dart';
 import 'package:planets/data/models/model.planet.dart';
+import 'package:planets/helpers/image.planet.dart';
 import 'package:planets/presentation/widgets/background.dart';
 import 'package:planets/providers/provider.planets.dart';
 import 'package:planets/routes/router.names.dart';
@@ -121,7 +122,9 @@ class PlanetsPage extends ConsumerWidget {
                                           height: size.height * 0.3,
                                           width: boxWeight,
                                           child: Image.network(
-                                            filteredPlanets[index].image ?? '',
+                                            imagePlanet(
+                                                filteredPlanets[index].name ??
+                                                    ''),
                                             loadingBuilder:
                                                 (BuildContext context,
                                                     Widget child,

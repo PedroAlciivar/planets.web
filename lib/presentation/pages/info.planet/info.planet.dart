@@ -4,6 +4,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:planets/data/models/model.planet.dart';
+import 'package:planets/helpers/image.planet.dart';
 import 'package:planets/presentation/widgets/background.dart';
 import 'package:planets/providers/provider.info.planet.dart';
 import 'package:planets/routes/router.names.dart';
@@ -89,7 +90,7 @@ class InfoPlanetPage extends ConsumerWidget {
                           height: size.height * 0.3,
                           width: imageWidth,
                           child: Image.network(
-                            planet.image ?? '',
+                            imagePlanet(planet.name ?? ''),
                             loadingBuilder: (BuildContext context, Widget child,
                                 ImageChunkEvent? loadingProgress) {
                               if (loadingProgress == null) {
@@ -151,14 +152,30 @@ class InfoPlanetPage extends ConsumerWidget {
                           "Planeta No Encontrado",
                           style: TextStyle(color: Colors.white),
                         ),
-                        Container(
-                          width: imageWidth,
-                          height: size.height * 0.4,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/img/404.jpg"),
-                                fit: BoxFit.contain),
-                          ),
+                        Image.network(
+                          "https://media.istockphoto.com/id/1250923288/vector/error-404-template-with-cosmos-background-page-not-found-message.jpg?s=612x612&w=0&k=20&c=tGbn1M3HWjHj3XdGGN-8Up44GxFH1QWvOo5dKJwuANw=",
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) {
+                              return child;
+                            }
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        (loadingProgress.expectedTotalBytes ??
+                                            1)
+                                    : null,
+                              ),
+                            );
+                          },
+                          errorBuilder: (BuildContext context, Object exception,
+                              StackTrace? stackTrace) {
+                            return const Center(
+                              child: Text('Error loading image'),
+                            );
+                          },
                         ),
                         ElevatedButton(
                             onPressed: () => context.go(RouteNames.planets),
