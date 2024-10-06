@@ -12,7 +12,7 @@ Este proyecto es una aplicación Flutter que muestra información sobre planetas
 - **AutoSizeText**: Ajuste responsivo del tamaño de texto según el espacio disponible.
 - **SmartDialog**: Para manejar modales y diálogos personalizados.
 - **Hovering**: Efectos de hover para cambiar colores de los contenedores en la UI.
-- **Particles Flutter**: Animación de fondo que simula el espacio.{
+- **Particles Flutter**: Animación de fondo que simula el espacio.
 - **LayoutBuilder**: Manejo responsivo de la interfaz según las dimensiones de la pantalla.
 
 ## Arquitectura del Proyecto
@@ -50,3 +50,46 @@ lib/
 ├── routes/             # Configuración de rutas utilizando GoRouter.
 │
 └── main.dart           # Punto de entrada principal de la aplicación.
+```
+
+### Explicación de Carpetas
+
+- **data**: Gestiona la interacción con las fuentes de datos externas, como las APIs. Aquí también se definen los modelos que representan los datos que la aplicación consume.
+  
+- **domain**: Contiene la lógica de negocio principal y define las entidades del dominio. Los casos de uso encapsulan la lógica específica de cada operación del negocio.
+
+- **presentation**: Responsable de la interfaz de usuario, con diferentes páginas y componentes reutilizables.
+
+- **providers**: Incluye los proveedores de estado de Riverpod que manejan el acceso a datos y la lógica de estado compartido entre diferentes partes de la aplicación.
+
+- **routes**: Contiene la configuración de las rutas de la aplicación, utilizando GoRouter para la navegación entre las diferentes pantallas.
+
+## Ejecución del Proyecto
+
+### Requisitos
+
+- **Flutter SDK**: Versión 3.22
+- **Dart SDK**: Versión 3.4.0
+
+### Pasos para Ejecutar
+
+1. Clona el repositorio en tu máquina local:
+   ```bash
+   git clone https://github.com/tu_usuario/tu_repositorio.git
+   ```
+
+2. Instala las dependencias del proyecto:
+   ```bash
+   flutter pub get
+   ```
+
+3. Ejecuta la aplicación en tu dispositivo o simulador:
+   ```bash
+   flutter run
+   ```
+
+
+### Enlace a la versión web
+
+Puedes acceder a la versión web de la aplicación en GitHub Pages mediante el siguiente enlace:
+https://pedroalciivar.github.io/planets.web/
