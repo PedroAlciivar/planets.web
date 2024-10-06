@@ -1,4 +1,4 @@
-# Proyecto Flutter: Explorador de Planetas
+# Proyecto Flutter: Planetas
 
 Este proyecto es una aplicación Flutter que muestra información sobre planetas, utilizando una API externa. La arquitectura del proyecto sigue los principios de arquitectura limpia, con separaciones claras entre las capas de datos, dominio y presentación. La interfaz incluye animaciones y efectos visuales para mejorar la experiencia del usuario.
 
@@ -64,12 +64,13 @@ lib/
 
 - **routes**: Contiene la configuración de las rutas de la aplicación, utilizando GoRouter para la navegación entre las diferentes pantallas.
 
+
 ## Ejecución del Proyecto
 
 ### Requisitos
 
-- **Flutter SDK**: Versión 3.22
-- **Dart SDK**: Versión 3.4.0
+- **Flutter**: Versión 3.22
+- **Dart**: Versión 3.4.0
 
 ### Pasos para Ejecutar
 
